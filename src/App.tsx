@@ -17,16 +17,16 @@ class App extends React.Component<{}, { name: string, enthusiasmLevel: string }>
 
   getName = () => this.state.name || defaultName;
 
-  handleNameChange = (nextName: string) => {
-    this.setState({name: nextName});
-  }
-
   getEnthusiasmLevel = () => {
     const level = parseInt(this.state.enthusiasmLevel, 10);
     if (isNaN(level)) {
       return defaultEnthusiasmLevel;
     }
     return level;
+  }
+
+  handleNameChange = (nextName: string) => {
+    this.setState({name: nextName});
   }
 
   handleEnthusiasmChange = (nextEnthusiasmLevel: string) => {
