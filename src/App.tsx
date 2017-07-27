@@ -40,7 +40,7 @@ class App extends React.Component<{}, { name: string, enthusiasmLevel: string }>
         <Hello name={this.getName()} enthusiasmLevel={this.getEnthusiasmLevel()}/>
         <MyInput
           value={this.state.name}
-          placeholder="Enter name"
+          placeholder="Name"
           handleChange={this.handleNameChange}
         />
         <MyInput
