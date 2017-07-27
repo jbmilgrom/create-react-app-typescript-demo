@@ -36,25 +36,27 @@ class App extends React.Component<{}, Props> {
 
   handleEnthusiasmChange = (nextEnthusiasmLevel: string) => {
     this.setState({inputEnthusiasmValue: nextEnthusiasmLevel});
-    this.setEnthusiasmLevel(nextEnthusiasmLevel);
-  }
-
-  setEnthusiasmLevel(nextEnthusiasmLevel: string) {
     const level = parseInt(nextEnthusiasmLevel, 10);
-    let errorMessage;
-    if (isNaN(level)) {
-      errorMessage = 'Please type in a number you goose, silly.';
-    } else if (level < 1) {
-      errorMessage = 'Why so serious?';
-    } else if (level > 200) {
-      errorMessage = 'Calm down there buddy.';
-    }
+    const errorMessage = this.getEnthusiasmErrorMessage(level);
     if (!errorMessage) {
       this.setState({enthusiasmLevel: level});
       this.setState({enthusiasmLevelErrorMessage: defaultErrorMessage});
     } else {
       this.setState({enthusiasmLevelErrorMessage: errorMessage});
     }
+  }
+
+  getEnthusiasmErrorMessage(level: number) {
+    if (isNaN(level)) {
+      return 'Please type in a number you goose, silly.';
+    }
+    if (level < 1) {
+      return 'Why so serious?';
+    }
+    if (level > 200) {
+      return 'Calm down there buddy.';
+    }
+    return defaultErrorMessage;
   }
 
   render() {
