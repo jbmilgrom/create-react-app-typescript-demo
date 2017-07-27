@@ -19,10 +19,7 @@ class App extends React.Component<{}, { name: string, enthusiasmLevel: string }>
 
   getEnthusiasmLevel = () => {
     const level = parseInt(this.state.enthusiasmLevel, 10);
-    if (isNaN(level)) {
-      return defaultEnthusiasmLevel;
-    }
-    return level;
+    return isNaN(level) ? defaultEnthusiasmLevel : level;
   }
 
   handleNameChange = (nextName: string) => {
