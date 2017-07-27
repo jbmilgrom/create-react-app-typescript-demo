@@ -24,5 +24,8 @@ export default Hello;
 // private helpers
 
 function getExclamationMarks(numChars: number): string {
-  return Array(numChars + 1).join('!');
+  if (numChars < 1) {
+    return '';
+  }
+  return '!' + getExclamationMarks(numChars - 1);
 }
