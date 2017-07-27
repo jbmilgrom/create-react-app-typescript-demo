@@ -6,24 +6,48 @@ import MyInput from './components/MyInput';
 import Header from './components/Header';
 
 const logo = require('./logo.svg');
-const defaultValue = 'I started as Jonathan';
+const defaultName = 'I started as Jonathan';
+const defaultEnthusiasmLevel = 4;
 
-class App extends React.Component<{}, { myInputValue: string }> {
+class App extends React.Component<{}, { name: string, enthusiasmLevel: string }> {
   constructor() {
     super();
-    this.state = {myInputValue: ''};
+    this.state = {name: '', enthusiasmLevel: ''};
   }
 
-  handleInputChange = (nextValue: string) => {
-    this.setState({myInputValue: nextValue});
+  getName = () => this.state.name || defaultName;
+
+  handleNameChange = (nextName: string) => {
+    this.setState({name: nextName});
+  }
+
+  getEnthusiasmLevel = () => {
+    const level = parseInt(this.state.enthusiasmLevel, 10);
+    if (isNaN(level)) {
+      return defaultEnthusiasmLevel;
+    }
+    return level;
+  }
+
+  handleEnthusiasmChange = (nextEnthusiasmLevel: string) => {
+    this.setState({enthusiasmLevel: nextEnthusiasmLevel});
   }
 
   render() {
     return (
       <div className="App">
         <Header logo={logo}/>
-        <Hello name={this.state.myInputValue || defaultValue} enthusiasmLevel={4}/>
-        <MyInput value={this.state.myInputValue} handleChange={this.handleInputChange}/>
+        <Hello name={this.getName()} enthusiasmLevel={this.getEnthusiasmLevel()}/>
+        <MyInput
+          value={this.state.name}
+          placeholder="Enter name"
+          handleChange={this.handleNameChange}
+        />
+        <MyInput
+          value={this.state.enthusiasmLevel}
+          placeholder="Enthusiasm level"
+          handleChange={this.handleEnthusiasmChange}
+        />
       </div>
     );
   }
