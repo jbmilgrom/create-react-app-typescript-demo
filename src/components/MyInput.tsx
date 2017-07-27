@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface Props {
-  value: string;
+  value?: string;
   placeholder: string;
 
   handleChange(text: string): void;

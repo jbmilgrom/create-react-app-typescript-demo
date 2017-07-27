@@ -4,7 +4,7 @@ interface Props {
   logo: string;
 }
 
-export default function Header({logo}: Props) {
+function Header({logo}: Props) {
   return (
     <div>
       <div className="App-header">
@@ -17,3 +17,5 @@ export default function Header({logo}: Props) {
     </div>
   );
 }
+
+export default Header;
