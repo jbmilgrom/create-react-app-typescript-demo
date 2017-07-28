@@ -7,8 +7,8 @@ import Header from './components/Header';
 import InputError from './components/InputError';
 
 const logo = require('./logo.svg');
-const defaultName = 'Connor';
-const defaultEnthusiasmLevel = 400;
+const defaultName = 'Jonathan';
+const defaultEnthusiasmLevel = 7;
 const defaultErrorMessage = '';
 
 interface State {
