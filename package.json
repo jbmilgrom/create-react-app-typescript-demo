@@ -7,6 +7,11 @@
     "@types/node": "^8.0.16",
     "@types/react": "^15.0.39",
     "@types/react-dom": "^15.5.1",
+    "eslint-config-prettier": "^2.3.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3",
+    "prettier-eslint": "^6.4.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts-ts": "2.4.0"
@@ -21,6 +26,10 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged":{
+    "*.js": ["eslint --fix", "git add"]
   }
 }

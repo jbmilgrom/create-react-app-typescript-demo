@@ -7,8 +7,8 @@ import Header from './components/Header';
 import InputError from './components/InputError';
 
 const logo = require('./logo.svg');
-const defaultName = 'Jonathan';
-const defaultEnthusiasmLevel = 4;
+const defaultName = 'Connor';
+const defaultEnthusiasmLevel = 400;
 const defaultErrorMessage = '';
 
 interface State {
@@ -52,6 +52,9 @@ class App extends React.Component<{}, State> {
     }
     if (level < 1) {
       return 'Why so serious?';
+    }
+    if (level > 9000) {
+      return 'IT\'S OVER 9000!!!!!!!!!!!!' ;
     }
     if (level > 200) {
       return 'Calm down there buddy.';
