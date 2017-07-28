@@ -29,12 +29,12 @@ class App extends React.Component<{}, State> {
     };
   }
 
-  handleNameChange = (nextName: string) => {
+  handleNameChange = (nextName: string): void => {
     this.setState({inputNameValue: nextName});
     this.setState({name: nextName});
   }
 
-  handleEnthusiasmChange = (nextEnthusiasmLevel: string) => {
+  handleEnthusiasmChange = (nextEnthusiasmLevel: string): void => {
     this.setState({inputEnthusiasmValue: nextEnthusiasmLevel});
     const level = parseInt(nextEnthusiasmLevel, 10);
     const errorMessage = this.getEnthusiasmErrorMessage(level);
@@ -46,7 +46,7 @@ class App extends React.Component<{}, State> {
     }
   }
 
-  getEnthusiasmErrorMessage(level: number) {
+  getEnthusiasmErrorMessage(level: number): string {
     if (isNaN(level)) {
       return 'Please type in a number you goose, silly.';
     }
