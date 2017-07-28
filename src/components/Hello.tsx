@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface Props {
   name: string;
@@ -7,10 +7,10 @@ interface Props {
 
 function Hello({ name, enthusiasmLevel = 1 }: Props) {
   if (enthusiasmLevel <= 0) {
-    throw new Error("A little bit louder now.");
+    throw new Error('A little bit louder now.');
   }
   if (enthusiasmLevel > 1000) {
-    throw new Error("Woaaah... kinda enthusiastic there buddy.");
+    throw new Error('Woaaah... kinda enthusiastic there buddy.');
   }
   return (
     <div className="hello">
@@ -27,7 +27,7 @@ export default Hello;
 
 function getExclamationMarks(numChars: number): string {
   if (numChars < 1) {
-    return "";
+    return '';
   }
-  return "!" + getExclamationMarks(numChars - 1);
+  return '!' + getExclamationMarks(numChars - 1);
 }

@@ -29,7 +29,14 @@
     "eject": "react-scripts-ts eject",
     "pre-commit": "lint-staged"
   },
-  "lint-staged":{
-    "*.js": ["eslint --fix", "git add"]
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.tsx": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
