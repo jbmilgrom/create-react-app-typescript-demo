@@ -40,7 +40,7 @@ class App extends React.Component<{}, State> {
     this.setEnthusiasmLevel(level, this.getEnthusiasmErrorMessage(level));
   }
 
-  setEnthusiasmLevel = (level: number, errorMessage: string) => {
+  setEnthusiasmLevel = (level: number, errorMessage: string): void => {
     if (!errorMessage) {
       this.setState({enthusiasmLevel: level});
       this.setState({enthusiasmLevelErrorMessage: defaultErrorMessage});
