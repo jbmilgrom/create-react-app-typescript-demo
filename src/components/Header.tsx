@@ -1,14 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
 interface Props {
   logo: string;
 }
 
-function Header({logo}: Props) {
+function Header({ logo }: Props) {
   return (
     <div>
       <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
+        <img src={logo} className="App-logo" alt="logo" />
         <h2>Welcome to React</h2>
       </div>
       <p className="App-intro">

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 interface Props {
   value?: string;
@@ -7,7 +7,7 @@ interface Props {
   handleChange(text: string): void;
 }
 
-function MyInput({value, placeholder, handleChange}: Props) {
+function MyInput({ value, placeholder, handleChange }: Props) {
   const _handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     handleChange(event.currentTarget.value);
   };
