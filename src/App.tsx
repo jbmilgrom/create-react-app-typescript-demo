@@ -11,7 +11,7 @@ const defaultName = 'Jonathan';
 const defaultEnthusiasmLevel = 4;
 const defaultErrorMessage = '';
 
-interface Props {
+interface State {
   name: string;
   enthusiasmLevel: number;
   enthusiasmLevelErrorMessage: string;
@@ -19,7 +19,7 @@ interface Props {
   inputEnthusiasmValue?: string;
 }
 
-class App extends React.Component<{}, Props> {
+class App extends React.Component<{}, State> {
   constructor() {
     super();
     this.state = {
