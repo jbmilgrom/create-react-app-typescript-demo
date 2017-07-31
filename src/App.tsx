@@ -53,10 +53,6 @@ class App extends React.Component<{}, State> {
     if (level < 200) {
       return "Dude come on....";
     }
-    if (level > 100000000) {
-      return "Simon did this to us....";
-    }
-
     if (level < 1) {
       return "Why so serious?";
     }
