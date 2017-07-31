@@ -19,7 +19,6 @@
   "devDependencies": {
     "@types/enzyme": "^2.8.4",
     "enzyme": "^2.9.1",
-    "react-addons-test-utils": "^15.6.0",
     "tslint-config-prettier": "^1.1.0",
     "tslint-eslint-rules": "^4.1.1"
   },
@@ -29,15 +28,5 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.tsx": [
-      "eslint --fix",
-      "git add"
-    ]
   }
 }

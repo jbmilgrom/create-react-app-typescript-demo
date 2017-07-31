@@ -1,0 +1,12 @@
+{
+ "linters":{
+   "*.js": [
+     "eslint --fix",
+     "git add"
+   ],
+   "*.tsx": [
+     "tslint --write",
+     "git add"
+   ]
+ }
+}
