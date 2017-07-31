@@ -1,10 +1,10 @@
-import * as React from "react";
-import "./App.css";
+import * as React from 'react';
+import './App.css';
 
-import Header from "./components/Header";
-import Hello from "./components/Hello";
-import InputError from "./components/InputError";
-import MyInput from "./components/MyInput";
+import Header from './components/Header';
+import Hello from './components/Hello';
+import InputError from './components/InputError';
+import MyInput from './components/MyInput';
 
 const logo = require('./logo.svg');
 const defaultName = 'Jonathan';
@@ -67,7 +67,7 @@ class App extends React.Component<{}, State> {
 
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Header logo={logo} />
         <Hello
           name={this.state.name}
@@ -75,12 +75,12 @@ class App extends React.Component<{}, State> {
         />
         <MyInput
           value={this.state.inputNameValue}
-          placeholder='Name'
+          placeholder="Name"
           handleChange={this.handleNameChange}
         />
         <MyInput
           value={this.state.inputEnthusiasmValue}
-          placeholder='Enthusiasm level'
+          placeholder="Enthusiasm level"
           handleChange={this.handleEnthusiasmChange}
         />
         <InputError message={this.state.enthusiasmLevelErrorMessage} />
