@@ -25,7 +25,7 @@ class App extends React.Component<{}, State> {
     this.state = {
       name: defaultName,
       enthusiasmLevel: defaultEnthusiasmLevel,
-      enthusiasmLevelErrorMessage: defaultErrorMessage
+      enthusiasmLevelErrorMessage: defaultErrorMessage,
     };
   }
 
@@ -35,9 +35,9 @@ class App extends React.Component<{}, State> {
   };
 
   handleEnthusiasmChange = (nextEnthusiasmLevel: string): void => {
-    this.setState({inputEnthusiasmValue: nextEnthusiasmLevel});
+    this.setState({ inputEnthusiasmValue: nextEnthusiasmLevel });
     this.setEnthusiasmLevel(parseInt(nextEnthusiasmLevel, 10));
-  }
+  };
 
   setEnthusiasmLevel = (level: number): void => {
     const errorMessage: string = this.getEnthusiasmErrorMessage(level);
