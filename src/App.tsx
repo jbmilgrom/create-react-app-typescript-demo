@@ -6,10 +6,10 @@ import Hello from "./components/Hello";
 import InputError from "./components/InputError";
 import MyInput from "./components/MyInput";
 
-const logo = require("./logo.svg");
-const defaultName = "Jonathan";
+const logo = require('./logo.svg');
+const defaultName = 'Jonathan';
 const defaultEnthusiasmLevel = 7;
-const defaultErrorMessage = "";
+const defaultErrorMessage = '';
 
 interface State {
   name: string;
@@ -48,26 +48,26 @@ class App extends React.Component<{}, State> {
 
   getEnthusiasmErrorMessage(level: number): string {
     if (isNaN(level)) {
-      return "Please type in a number you goose, silly.";
+      return 'Please type in a number you goose, silly.';
     }
     if (level < 200) {
-      return "Dude come on....";
+      return 'Dude come on....';
     }
     if (level < 1) {
-      return "Why so serious?";
+      return 'Why so serious?';
     }
     if (level > 9000) {
       return 'IT\'S OVER 9000!!!!!!!!!!!!!!';
     }
     if (level > 200) {
-      return "Calm down there buddy.";
+      return 'Calm down there buddy.';
     }
     return defaultErrorMessage;
   }
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Header logo={logo} />
         <Hello
           name={this.state.name}
@@ -75,12 +75,12 @@ class App extends React.Component<{}, State> {
         />
         <MyInput
           value={this.state.inputNameValue}
-          placeholder="Name"
+          placeholder='Name'
           handleChange={this.handleNameChange}
         />
         <MyInput
           value={this.state.inputEnthusiasmValue}
-          placeholder="Enthusiasm level"
+          placeholder='Enthusiasm level'
           handleChange={this.handleEnthusiasmChange}
         />
         <InputError message={this.state.enthusiasmLevelErrorMessage} />
