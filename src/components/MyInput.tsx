@@ -8,17 +8,20 @@ interface Props {
 }
 
 function MyInput({value, placeholder, handleChange}: Props) {
-  const _handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    handleChange(event.currentTarget.value);
-  };
   return (
     <input
       type="text"
       placeholder={placeholder}
       value={value}
-      onChange={_handleChange}
+      onChange={withHTMLInputElementValue(handleChange)}
     />
   );
 }
 
 export default MyInput;
+
+// private helpers
+
+function withHTMLInputElementValue(cb: (text: string) => void) {
+  return (event: React.FormEvent<HTMLInputElement>) => cb(event.currentTarget.value);
+}
