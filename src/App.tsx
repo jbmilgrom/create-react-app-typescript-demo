@@ -1,15 +1,15 @@
-import * as React from 'react';
-import './App.css';
+import * as React from "react";
+import "./App.css";
 
-import Hello from './components/Hello';
-import MyInput from './components/MyInput';
-import Header from './components/Header';
-import InputError from './components/InputError';
+import Header from "./components/Header";
+import Hello from "./components/Hello";
+import InputError from "./components/InputError";
+import MyInput from "./components/MyInput";
 
-const logo = require('./logo.svg');
-const defaultName = 'Jonathan';
+const logo = require("./logo.svg");
+const defaultName = "Jonathan";
 const defaultEnthusiasmLevel = 7;
-const defaultErrorMessage = '';
+const defaultErrorMessage = "";
 
 interface State {
   name: string;
@@ -48,20 +48,23 @@ class App extends React.Component<{}, State> {
 
   getEnthusiasmErrorMessage(level: number): string {
     if (isNaN(level)) {
-      return 'Please type in a number you goose, silly.';
+      return "Please type in a number you goose, silly.";
     }
-    if(level < 200){
-      return 'Dude come on....'
+    if (level < 200) {
+      return "Dude come on....";
     }
-    
+    if (level > 100000000) {
+      return "Simon did this to us....";
+    }
+
     if (level < 1) {
-      return 'Why so serious?';
+      return "Why so serious?";
     }
     if (level > 9000) {
       return 'IT\'S OVER 9000!!!!!!!!!!!!!!';
     }
     if (level > 200) {
-      return 'Calm down there buddy.';
+      return "Calm down there buddy.";
     }
     return defaultErrorMessage;
   }

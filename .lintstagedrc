@@ -1,11 +1,11 @@
 {
  "linters":{
    "*.js": [
-     "eslint --fix",
+     "prettier --write",
      "git add"
    ],
    "*.tsx": [
-     "tslint --write",
+     "prettier --write",
      "git add"
    ]
  }
