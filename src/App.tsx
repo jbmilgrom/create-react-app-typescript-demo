@@ -51,7 +51,7 @@ class App extends React.Component<{}, State> {
 
   getEnthusiasmErrorMessage(level: number): string {
     if (isNaN(level)) {
-      return 'Please type in a number you goose, silly.';
+      return 'Please type in a number you goose, silly!';
     }
     if (level < 1) {
       return 'Why so serious?';
