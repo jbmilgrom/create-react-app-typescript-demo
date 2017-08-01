@@ -1,9 +1,5 @@
 {
  "linters":{
-   "*.js": [
-     "prettier --write",
-     "git add"
-   ],
    "*.tsx": [
      "prettier --write",
      "git add"
