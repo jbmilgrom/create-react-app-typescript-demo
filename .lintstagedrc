@@ -1,8 +1,5 @@
 {
  "linters":{
-   "*.tsx": [
-     "prettier --single-quote --write",
-     "git add"
-   ]
+
  }
 }
