@@ -30,6 +30,6 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["prettier --parser typescript --write", "git add"]
+    "*.{ts,tsx}": ["prettier --parser typescript --single-quote --write", "git add"]
   }
 }
