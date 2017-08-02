@@ -1,15 +1,15 @@
-import * as React from 'react';
-import './App.css';
+import * as React from "react";
+import "./App.css";
 
-import Header from './components/Header';
-import Hello from './components/Hello';
-import InputError from './components/InputError';
-import MyInput from './components/MyInput';
+import Header from "./components/Header";
+import Hello from "./components/Hello";
+import InputError from "./components/InputError";
+import MyInput from "./components/MyInput";
 
-const logo = require('./logo.svg');
-const defaultName = 'Jonathan';
+const logo = require("./logo.svg");
+const defaultName = "Jonathan";
 const defaultEnthusiasmLevel = 7;
-const defaultErrorMessage = '';
+const defaultErrorMessage = "";
 
 interface State {
   name: string;
@@ -25,7 +25,7 @@ class App extends React.Component<{}, State> {
     this.state = {
       name: defaultName,
       enthusiasmLevel: defaultEnthusiasmLevel,
-      enthusiasmLevelErrorMessage: defaultErrorMessage,
+      enthusiasmLevelErrorMessage: defaultErrorMessage
     };
   }
 
@@ -60,10 +60,10 @@ class App extends React.Component<{}, State> {
       return "IT\'S OVER 9000!!!!!!!!!!!!!!";
     }
     if (level > 200) {
-      return 'Calm down there buddy.';
+      return "Calm down there buddy.";
     }
-    if(level != 10000){
-      return 'yeah'
+    if (level != 10000) {
+      return "no way.";
     }
     return defaultErrorMessage;
   }
