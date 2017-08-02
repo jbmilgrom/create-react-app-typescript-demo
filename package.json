@@ -30,9 +30,9 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-  "*.tsx": [
-    "prettier --write",
-    "git add"
+    "*.tsx": [
+      "prettier --write",
+      "git add"
     ]
   }
 }
