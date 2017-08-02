@@ -31,7 +31,7 @@
   },
   "lint-staged": {
   "*.tsx": [
-    "prettier --single-quote --write",
+    "prettier --write",
     "git add"
     ]
   }
