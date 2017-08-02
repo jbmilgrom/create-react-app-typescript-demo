@@ -60,7 +60,7 @@ class App extends React.Component<{}, State> {
       return "Why so serious?";
     }
     if (level > 200) {
-      return 'Calm down there buddy.';
+      return "Calm down there buddy.";
     }
 
     return defaultErrorMessage;
