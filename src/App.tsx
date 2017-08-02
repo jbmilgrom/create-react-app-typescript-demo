@@ -53,7 +53,7 @@ class App extends React.Component<{}, State> {
     if (isNaN(level)) {
       return 'Please type in a number you goose, silly.';
     }
-    if (level > 9000){
+    if (level > 9000) {
       return 'it\'s over 9000!!!!!''
     }
     if (level < 1) {
@@ -62,7 +62,7 @@ class App extends React.Component<{}, State> {
     if (level > 200) {
       return 'Calm down there buddy.';
     }
-    
+
     return defaultErrorMessage;
   }
 
