@@ -56,14 +56,8 @@ class App extends React.Component<{}, State> {
     if (level < 1) {
       return 'Why so serious?';
     }
-    if (level > 9000) {
-      return "IT\'S OVER 9000!!!!!!!!!!!!!!";
-    }
     if (level > 200) {
       return 'Calm down there buddy.';
-    }
-    if (level != 10000) {
-      return 'For the love of GOD!.';
     }
     return defaultErrorMessage;
   }
