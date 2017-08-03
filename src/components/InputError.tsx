@@ -4,10 +4,12 @@ interface Props {
   children: string;
 }
 
-function InputError({children}: Props) {
+function InputError({ children }: Props) {
   children = children ? 'This is awkward: ' + children : '';
   return (
-    <div className="InputError">{children}</div>
+    <div className="InputError">
+      {children}
+    </div>
   );
 }
 

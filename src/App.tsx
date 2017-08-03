@@ -1,14 +1,14 @@
 import * as React from 'react';
 import './App.css';
 
-import Hello from './components/Hello';
-import MyInput from './components/MyInput';
 import Header from './components/Header';
+import Hello from './components/Hello';
 import InputError from './components/InputError';
+import MyInput from './components/MyInput';
 
 const logo = require('./logo.svg');
 const defaultName = 'Jonathan';
-const defaultEnthusiasmLevel = 4;
+const defaultEnthusiasmLevel = 7;
 const defaultErrorMessage = '';
 
 interface State {
@@ -30,22 +30,22 @@ class App extends React.Component<{}, State> {
   }
 
   handleNameChange = (nextName: string): void => {
-    this.setState({inputNameValue: nextName});
-    this.setState({name: nextName});
+    this.setState({ inputNameValue: nextName });
+    this.setState({ name: nextName });
   };
 
   handleEnthusiasmChange = (nextEnthusiasmLevel: string): void => {
-    this.setState({inputEnthusiasmValue: nextEnthusiasmLevel});
+    this.setState({ inputEnthusiasmValue: nextEnthusiasmLevel });
     this.setEnthusiasmLevel(parseInt(nextEnthusiasmLevel, 10));
   };
 
   setEnthusiasmLevel = (level: number): void => {
     const errorMessage: string = this.getEnthusiasmErrorMessage(level);
     if (!errorMessage) {
-      this.setState({enthusiasmLevel: level});
-      this.setState({enthusiasmLevelErrorMessage: defaultErrorMessage});
+      this.setState({ enthusiasmLevel: level });
+      this.setState({ enthusiasmLevelErrorMessage: defaultErrorMessage });
     } else {
-      this.setState({enthusiasmLevelErrorMessage: errorMessage});
+      this.setState({ enthusiasmLevelErrorMessage: errorMessage });
     }
   };
 
@@ -53,20 +53,27 @@ class App extends React.Component<{}, State> {
     if (isNaN(level)) {
       return 'Please type in a number you goose, silly.';
     }
+    if (level > 9000) {
+      return 'it\'s over 9000!!!!!';
+    }
     if (level < 1) {
       return 'Why so serious?';
     }
     if (level > 200) {
-      return 'Calm down there buddy.';
+      return 'Clam down there buddy.';
     }
+
     return defaultErrorMessage;
   }
 
   render() {
     return (
       <div className="App">
-        <Header logo={logo}/>
-        <Hello name={this.state.name} enthusiasmLevel={this.state.enthusiasmLevel}/>
+        <Header logo={logo} />
+        <Hello
+          name={this.state.name}
+          enthusiasmLevel={this.state.enthusiasmLevel}
+        />
         <MyInput
           value={this.state.inputNameValue}
           placeholder="Name"
