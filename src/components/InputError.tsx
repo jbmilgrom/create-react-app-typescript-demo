@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 interface Props {
-  message: string;
+  children: string;
 }
 
-function InputError({message}: Props) {
-  message = message ? 'This is awkward: ' + message : '';
+function InputError({children}: Props) {
+  children = children ? 'This is awkward: ' + children : '';
   return (
-    <div className="InputError">{message}</div>
+    <div className="InputError">{children}</div>
   );
 }
 

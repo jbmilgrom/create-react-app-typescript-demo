@@ -32,12 +32,12 @@ class App extends React.Component<{}, State> {
   handleNameChange = (nextName: string): void => {
     this.setState({inputNameValue: nextName});
     this.setState({name: nextName});
-  }
+  };
 
   handleEnthusiasmChange = (nextEnthusiasmLevel: string): void => {
     this.setState({inputEnthusiasmValue: nextEnthusiasmLevel});
     this.setEnthusiasmLevel(parseInt(nextEnthusiasmLevel, 10));
-  }
+  };
 
   setEnthusiasmLevel = (level: number): void => {
     const errorMessage: string = this.getEnthusiasmErrorMessage(level);
@@ -47,7 +47,7 @@ class App extends React.Component<{}, State> {
     } else {
       this.setState({enthusiasmLevelErrorMessage: errorMessage});
     }
-  }
+  };
 
   getEnthusiasmErrorMessage(level: number): string {
     if (isNaN(level)) {
@@ -77,7 +77,9 @@ class App extends React.Component<{}, State> {
           placeholder="Enthusiasm level"
           handleChange={this.handleEnthusiasmChange}
         />
-        <InputError message={this.state.enthusiasmLevelErrorMessage}/>
+        <InputError>
+          {this.state.enthusiasmLevelErrorMessage}
+        </InputError>
       </div>
     );
   }
