@@ -7,7 +7,7 @@ interface Props {
   handleChange(text: string): void;
 }
 
-function MyInput({value, placeholder, handleChange}: Props) {
+function MyInput({ value, placeholder, handleChange }: Props) {
   return (
     <input
       type="text"
@@ -19,7 +19,6 @@ function MyInput({value, placeholder, handleChange}: Props) {
 }
 
 export default MyInput;
-
 // private helpers
 
 /**
@@ -28,5 +27,6 @@ export default MyInput;
  * @return {(event: React.FormEvent<HTMLInputElement>) => void}
  */
 function withHTMLInputElementValue(cb: (text: string) => void) {
-  return (event: React.FormEvent<HTMLInputElement>) => cb(event.currentTarget.value);
+  return (event: React.FormEvent<HTMLInputElement>) =>
+    cb(event.currentTarget.value);
 }
