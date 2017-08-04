@@ -86,7 +86,8 @@
     "radix": true,
     "semicolon": [
       true,
-      "always", "ignore-bound-class-methods"
+      "always",
+      "ignore-bound-class-methods"
     ],
     "switch-default": true,
     "trailing-comma": false,
